@@ -1,4 +1,4 @@
-package com.serratec.trabalhogrupo01.service.Produto;
+package com.serratec.trabalhogrupo01.service.Marketplace;
 
 import java.util.InputMismatchException;
 import java.util.List;
@@ -6,34 +6,34 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.serratec.trabalhogrupo01.model.Produto.ProdutosModel;
-import com.serratec.trabalhogrupo01.repository.Produto.ProdutosRepository;
+import com.serratec.trabalhogrupo01.model.Marketplace.MarketplaceModel;
+import com.serratec.trabalhogrupo01.repository.Marketplace.MarketplaceRepository;
 
 @Service
-public class ProdutosService {
+public class MarketplaceService {
     
     @Autowired 
-    private ProdutosRepository produtosRepositoryAction;
+    private MarketplaceRepository produtosRepositoryAction;
 
-    public List<ProdutosModel> obterTodos(){
+    public List<MarketplaceModel> obterTodos(){
         return produtosRepositoryAction.obterTodos();
     }
 
-    public ProdutosModel obter(Long id){
-        ProdutosModel produto = produtosRepositoryAction.obter(id);
+    public MarketplaceModel obter(Long id){
+        MarketplaceModel produto = produtosRepositoryAction.obter(id);
         if(produto==null){
             throw new InputMismatchException(id + " do produto não encontrado");
         }
         return produto;
     }
 
-    public ProdutosModel adicionar (ProdutosModel produto){ 
+    public MarketplaceModel adicionar (MarketplaceModel produto){ 
         return produtosRepositoryAction.adicionar(produto);
     }
 
-    public ProdutosModel atualizar (long id, ProdutosModel produto){
+    public MarketplaceModel atualizar (long id, MarketplaceModel produto){
 
-        ProdutosModel produtoEncontrado = produtosRepositoryAction.obter(id);
+        MarketplaceModel produtoEncontrado = produtosRepositoryAction.obter(id);
         if(produtoEncontrado == null){
             throw new InputMismatchException("Erro ao tentar atualizar: "+ id + " do produto não encontrado");
         }
