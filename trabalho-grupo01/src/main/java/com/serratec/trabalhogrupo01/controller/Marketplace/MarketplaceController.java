@@ -1,4 +1,4 @@
-package com.serratec.trabalhogrupo01.controller.Produto;
+package com.serratec.trabalhogrupo01.controller.Marketplace;
 
 import java.util.List;
 
@@ -14,54 +14,51 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.serratec.trabalhogrupo01.model.Produto.ProdutosModel;
-import com.serratec.trabalhogrupo01.service.Produto.ProdutosService;
+import com.serratec.trabalhogrupo01.model.Marketplace.MarketplaceModel;
+import com.serratec.trabalhogrupo01.service.Marketplace.MarketplaceService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
-
 @RestController
-@RequestMapping("/api/produtos")
-
-@Api(value = "Produto")
-
-public class ProdutosController {
+@RequestMapping("/api/marketplace")
+@Api(value = "marketplace")
+public class MarketplaceController {
      
     @Autowired
-    private ProdutosService produtosServiceAction;
+    private MarketplaceService marketplaceServiceAction;
 
     @GetMapping
     @ApiOperation(value = "RETORNA UMA LISTA DE PRODUTOS ")
-    public ResponseEntity<List<ProdutosModel>> obterTodos(){
-        List<ProdutosModel> listaProd = produtosServiceAction.obterTodos();
+    public ResponseEntity<List<MarketplaceModel>> obterTodos(){
+        List<MarketplaceModel> listaProd = marketplaceServiceAction.obterTodos();
         return  ResponseEntity.ok(listaProd);
     }
 
     @GetMapping("/{id}")
     @ApiOperation(value = "RETORNA UM PRODUTO ESPECIFICO PELA ID")
-    public ResponseEntity<ProdutosModel> obter(@PathVariable Long id){
-        return ResponseEntity.ok(produtosServiceAction.obter(id));
+    public ResponseEntity<MarketplaceModel> obter(@PathVariable Long id){
+        return ResponseEntity.ok(marketplaceServiceAction.obter(id));
     }
 
     @PostMapping
     @ApiOperation(value = "ADICIONA UM PRODUTO")
-    public ResponseEntity<ProdutosModel> adicionar (@RequestBody ProdutosModel produto){ 
-        ProdutosModel prodAdicionado = produtosServiceAction.adicionar(produto);
+    public ResponseEntity<MarketplaceModel> adicionar (@RequestBody MarketplaceModel produto){ 
+        MarketplaceModel prodAdicionado = marketplaceServiceAction.adicionar(produto);
         return new ResponseEntity<>(prodAdicionado, HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
     @ApiOperation(value = "ATUALIZA UM PRODUTO")
-    public ResponseEntity<ProdutosModel> atualizar (@PathVariable long id, @RequestBody ProdutosModel produto){
-        ProdutosModel produAtualizado = produtosServiceAction.atualizar(id, produto);
+    public ResponseEntity<MarketplaceModel> atualizar (@PathVariable long id, @RequestBody MarketplaceModel produto){
+        MarketplaceModel produAtualizado = marketplaceServiceAction.atualizar(id, produto);
         return ResponseEntity.ok(produAtualizado);        
     }
 
     @DeleteMapping("/{id}")
     @ApiOperation(value = "DELETA UM PRODUTO")
     public ResponseEntity<?> deletar (@PathVariable Long id){
-        produtosServiceAction.deletar(id);
+        marketplaceServiceAction.deletar(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
