@@ -12,6 +12,7 @@ public class MarketplaceModel {
     private int qtdProd;
     private double valorVendaProd;
     private Date dataCadastroProd;
+    private String imgBase64;
     
     // getters and setters
     public Long getIdProduto() {
@@ -44,7 +45,12 @@ public class MarketplaceModel {
     public void setDataCadastroProd(Date dataCadastroProd) {
         this.dataCadastroProd = dataCadastroProd;
     }
-
+    public String getImgBase64() {
+        return imgBase64;
+    }
+    public void setImgBase64(String imgBase64) {
+        this.imgBase64 = imgBase64;
+    }
     
 
 }

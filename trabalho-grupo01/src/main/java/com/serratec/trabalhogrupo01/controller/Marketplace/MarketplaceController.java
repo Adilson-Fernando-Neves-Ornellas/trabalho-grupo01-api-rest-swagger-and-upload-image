@@ -20,7 +20,6 @@ import com.serratec.trabalhogrupo01.service.Marketplace.MarketplaceService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
-
 @RestController
 @RequestMapping("/api/marketplace")
 @Api(value = "marketplace")
