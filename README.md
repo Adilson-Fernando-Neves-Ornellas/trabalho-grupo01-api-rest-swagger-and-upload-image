@@ -1,2 +1,18 @@
 # trabalho-grupo01-api-rest-swagger-and-upload-image
-1° Swagger (Documentação muito legal para API) 2° Importar imagem ou anexos para dentro da API  2.1 Se for imagem, vc poderá enviar de até 2 formas diferentes. 2.1.1 A primeira seria em base64 no body     2.1.2 A segunda seria em File, a api deve receber e armazenar no disco fisico do servidor.
+Contrução de uma Api Rest Spring boot simples, com o objetivo de mostrar a funcionabilidade do Swagger (Documentação de Api) e fazer upload de images de 2 mareiras ( base64 ou em File, armazenar no disco fisico do servidor, o caminho onde ela foi salva deve ser salvo). em algum lugar.
+
+Trabalho feito por:
+
+-ADILSON FERNANDO NEVES ORNELLAS
+
+-BÁRBARA DÊSLANDES DA SILVA DE OLIVEIRA
+
+-BERNARDO CAMARA SIQUEIRA DE MORAES
+
+-BRUNA ZIMBRÃO SILVA
+
+-DOUGLAS DO AMARAL ROCHA MARIANO
+
+-GABRIEL DA COSTA GARCIA
+
+-LEONARDO LUCAS DA SILVA MENDES
