@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-TrabalhoGrupo01Application<trabalho-grupo01>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.serratec.trabalhogrupo01.TrabalhoGrupo01Application",
+            "projectName": "trabalho-grupo01",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

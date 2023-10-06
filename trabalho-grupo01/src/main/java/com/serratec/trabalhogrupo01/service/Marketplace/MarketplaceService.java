@@ -22,7 +22,7 @@ public class MarketplaceService {
     public MarketplaceModel obter(Long id){
         MarketplaceModel produto = produtosRepositoryAction.obter(id);
         if(produto==null){
-            throw new InputMismatchException(id + " do produto não encontrado");
+            throw new InputMismatchException("Não foi possível localizar o produto com id: " + id);
         }
         return produto;
     }
@@ -35,7 +35,7 @@ public class MarketplaceService {
 
         MarketplaceModel produtoEncontrado = produtosRepositoryAction.obter(id);
         if(produtoEncontrado == null){
-            throw new InputMismatchException("Erro ao tentar atualizar: "+ id + " do produto não encontrado");
+            throw new InputMismatchException("Erro ao tentar atualizar o produto com id: "+ id + ". Produto não encontrado");
         }
         produto.setIdProduto(id);
         return produtosRepositoryAction.atualizar(produto);
