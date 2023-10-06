@@ -13,8 +13,16 @@ public class MarketplaceModel {
     private double valorVendaProd;
     private Date dataCadastroProd;
     private String imgBase64;
+    private String nomeFile;
+    private String PathFile;
     
     // getters and setters
+    public String getPathFile() {
+        return PathFile;
+    }
+    public void setPathFile(String pathFile) {
+        PathFile = pathFile;
+    }
     public Long getIdProduto() {
         return idProduto;
     }
@@ -50,6 +58,12 @@ public class MarketplaceModel {
     }
     public void setImgBase64(String imgBase64) {
         this.imgBase64 = imgBase64;
+    }
+    public String getNomeFile() {
+        return nomeFile;
+    }
+    public void setNomeFile(String nomeFile) {
+        this.nomeFile = nomeFile;
     }
     
 
